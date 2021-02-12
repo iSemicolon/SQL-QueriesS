@@ -312,8 +312,18 @@ EMPNO ENAME      JOB              MGR HIREDATE         SAL       COMM     DEPTNO
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 KEYWORD: ROWID, ROWNUM
 
-275.	WAQTD 10TH MIN SALARY
+275.	WAQTD ENAME OF 10TH MIN SALARY
+
+SELECT ENAME, SAL
+FROM (SELECT EMP.*, ROWNUM SL
+FROM EMP
+ORDER BY SAL DESC)
+WHERE SL=10;
+
+
 276.	WAQTD 7TH MAX SAL
+
+
 277.	WAQTD ENAME OF EMP WHO IS EARNING 3RD MIN SAL
 278.	WAQTD ENAME OF EMP WHO IS EARNING 6TH MAX SAL
 279.	DETAILS OF ALL EMPLOYEE WHO IS EARNING 5TH MAX SAL
